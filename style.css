@@ -1,11 +1,89 @@
 /* Reset default styles */
-*,
+/* *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+} */
+
+/* Modern CSS reset - Andy Bell*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+figcaption,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles (bullet points) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove hyperlink default styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set default font family and size */
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Set default text color */
+body,
+input,
+textarea,
+select,
+button {
+  color: #333; /* You can adjust the color as needed */
+}
+
+/* Remove text input and button default styles */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Set default button styles */
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Ensure images are responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Define global color and font */
 
 :root {
   --color-dark-cyan: hsl(158, 36%, 37%);
@@ -15,135 +93,149 @@
   --color-White: hsl(0, 0%, 100%);
 
   --font-size: 14px;
-  --font-family-Montserrat:"Montserrat", serif;
-  --font-family-Fraunces:"Fraunces",sans-serif;
-  --font-weight-regular:500;
-  --font-weight-bold:700;
+  --font-family-Montserrat: "Montserrat", serif;
+  --font-family-Fraunces: "Fraunces", sans-serif;
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
 }
 
 /* || Define styles and layouts */
 html {
-    font-family: var(--font-family-Montserrat);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size);
-    color:var(--color-dark-grayish-blue);
+  font-family: var(--font-family-Montserrat);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size);
+  color: var(--color-dark-grayish-blue);
 }
 
 body {
-    width: 100vw;
-    margin: 0;
-    background-color: var(--color-cream);
+  width: 100%;
+  margin: 0;
+  background-color: var(--color-cream);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.product-component {
+  background-color: var(--color-White);
+  max-width: 24.6rem;
+  width: 100%;
+  border-radius: 0.7rem;
 
-    background-color: var(--color-White);
-    width: 24.6rem;
-    height: 42.9rem;
-    border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+  /* border radius */
+  border-radius: 0.7rem;
+  overflow: hidden;
 }
 
 img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border-radius: 0.7rem 0.7rem 0 0 ;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  /* border-radius: 0.7rem 0.7rem 0 0; */
 }
 
 .product {
-    padding: 1.7rem;
-    display: flex;
-    flex-direction: column;
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.product> * {
-    margin-bottom: 1.3rem;
+.product > * {
+  margin-bottom: 1.3rem;
 }
 
 .product-category {
-    color: var(--color-dark-grayish-blue);
-    letter-spacing: 0.36rem;
-    text-transform: uppercase;
+  color: var(--color-dark-grayish-blue);
+  letter-spacing: 0.36rem;
+  text-transform: uppercase;
+  font-size: 0.86rem; /* 12px */
 }
 
 .product-name {
-    font-size: 2rem;
-    font-family: var(--font-family-Fraunces);
-    font-weight: var(--font-weight-bold);
-    color:var(--color-very-dark-blue);
+  font-size: 1.8rem;
+  font-family: var(--font-family-Fraunces);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-very-dark-blue);
 }
 
 .product-description {
-    font-weight: var(--font-weight-regular);
-    color: var(--color-dark-grayish-blue);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark-grayish-blue);
 }
 
 .product-price {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap:20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
+
 .product-price-now {
-    color: var(--color-dark-cyan);
-    font-size: 2.6rem;
-    font-family: var(--font-family-Fraunces);
+  color: var(--color-dark-cyan);
+  font-size: 2.6rem;
+  font-family: var(--font-family-Fraunces);
 }
-.product-price-original {
+/* Use semantic label like <del> or the label <s> means delete of text*/
+/* .product-price-original {
     text-decoration: line-through;
-}
+} */
 
 button {
-    height: 3.4rem;
-    width: auto;
-    background-color: var(--color-dark-cyan);
-    color: var(--color-White);
-    letter-spacing: 0.07rem;
-    border-radius: 0.7rem;
+  /* height: 3.4rem;
+  width: auto; */
+  padding: 0.7rem;
+  background-color: var(--color-dark-cyan);
+  color: var(--color-White);
+  letter-spacing: 0.07rem;
+  border-radius: 0.7rem;
+  font-weight: 300;
 
-    border: 0;
+  border: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:0.57rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.57rem;
 }
 
 .product-cart {
-    width: 1rem;
-    height: 1rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 /* || Define media queries for larger scale */
-@media (min-width: 43rem){
-    main {
-        width: 43rem;
-        height: 32rem;
-        display: flex;
-        flex-direction: row;
-    }
-    img {
-        height: 100%;
-        width: auto;
-        border-radius: 0.7rem 0 0 0.7rem;
-    }
-    .product {
-        padding: 2.57rem 2.57rem 0px 2.57rem;
-    }
-    .product>* {
-        margin-bottom: 1.7rem;
-    }
+@media (min-width: 43rem) {
+  .product-component {
+    max-height: 32.14rem;
+    max-width: 43rem;
+    height: 100%;
+    border-radius: 0.7rem;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+  }
+
+  img,picture {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .product {
+    padding: 1.7rem;
+    flex: 1;
+  }
+
+  .product > * {
+    margin-bottom: 1.7rem;
+  }
 }
